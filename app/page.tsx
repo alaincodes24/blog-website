@@ -1,6 +1,7 @@
-'use client'
+"use client";
 import { FC } from "react";
 import Hero from "./components/Hero";
+import MoreNews from "./components/MoreNews";
 import SnackBar from "./components/SnackBar";
 import { unFoundArticlesMessage } from "./constants/articles";
 import useArticlesFetch from "./hooks/useArticlesFetch";
@@ -28,6 +29,7 @@ const Home: FC = () => {
   return (
     <main className="flex flex-col flex-1 mb-12 text-yellow-950 bg-light">
       <Hero />
+      <MoreNews />
     </main>
   );
 };

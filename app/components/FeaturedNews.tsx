@@ -66,7 +66,7 @@ const FeaturedNews: FC<FeaturedNewsProps> = ({ variant, article, isFetching }) =
         </div>
       </div>
       <img
-        src="https://picsum.photos/200/300"
+        src={urlToImage || "https://picsum.photos/200/300"}
         alt="article cover"
         className="object-cover w-full h-full rounded-sm"
       />
