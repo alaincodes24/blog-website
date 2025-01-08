@@ -1,4 +1,4 @@
-# Blog Website
+# Daily Brief blog website
 
 ## Project Setup
 
