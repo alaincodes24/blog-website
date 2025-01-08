@@ -27,9 +27,12 @@ const Home: FC = () => {
     );
 
   return (
-    <main className="flex flex-col flex-1 mb-12 text-yellow-950 bg-light">
+    <main className="flex flex-col flex-1 mb-12 text-yellow-950 bg-light min-h-screen h-full">
       <Hero />
-      <MoreNews />
+
+      <div className="h-full flex-1">
+        <MoreNews />
+      </div>
     </main>
   );
 };

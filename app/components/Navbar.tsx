@@ -14,7 +14,7 @@ import SearchInput from "./SearchInput";
 
 const Navbar: FC = () => {
   const router = useRouter();
-  // const pathname = window.location.pathname;
+  const pathname = window.location.pathname;
   const navigate = (url: string) => {
     router.push(url);
   };
@@ -24,7 +24,7 @@ const Navbar: FC = () => {
 
   const selectCategory = (category: string) => {
     dispatch(setCategory(category));
-    // if (pathname !== "/") navigate("/");
+    if (pathname !== "/") navigate("/");
   };
 
   const toggleNav = () => setIsNavOpen(!isNavOpen);
@@ -34,7 +34,7 @@ const Navbar: FC = () => {
       <CenterContent>
         <div className="flex items-center justify-between pb-3 md:pb-0">
           <Link href="/" className="text-3xl font-semibold md:text-4xl font-newsreader">
-            Spotlight
+            DailyBrief
           </Link>
 
           <nav className="text-center md:hidden" onClick={toggleNav}>

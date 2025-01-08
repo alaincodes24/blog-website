@@ -1,10 +1,11 @@
 import classnames from "classnames";
+import { useRouter } from "next/navigation";
 import { FC } from "react";
 import { FaUser } from "react-icons/fa";
 import { setSelectedArticle } from "../features/articles/articlesSlice";
-import FeaturedNewsSkeletonCard from "./FeaturedNewsSkeleton";
 import { normalizeAuthors } from "../helpers/articles";
 import { useAppDispatch } from "../hooks/redux";
+import FeaturedNewsSkeletonCard from "./FeaturedNewsSkeleton";
 
 interface FeaturedNewsProps {
   variant: "big" | "wide" | "small";
@@ -13,7 +14,8 @@ interface FeaturedNewsProps {
 }
 
 const FeaturedNews: FC<FeaturedNewsProps> = ({ variant, article, isFetching }) => {
-  // const navigate = useNavigate();
+  const router = useRouter();
+  const navigate = (url: string) => router.push(url);
   const dispatch = useAppDispatch();
 
   const titleClasses = classnames("font-semibold mb-3 line-clamp-3", {
@@ -42,7 +44,7 @@ const FeaturedNews: FC<FeaturedNewsProps> = ({ variant, article, isFetching }) =
 
   const viewArticle = () => {
     dispatch(setSelectedArticle(article));
-    // navigate(`/article/${id}`);
+    navigate(`/article/${id}`);
   };
 
   return (
