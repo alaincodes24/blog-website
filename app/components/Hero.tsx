@@ -1,4 +1,8 @@
 import { setHeroSectionTitle } from "../helpers/articles";
+import { useAppSelector } from "../hooks/redux";
+import useArticlesFetch from "../hooks/useArticlesFetch";
+import CenterContent from "./CenterContent";
+import FeaturedNews from "./FeaturedNews";
 
 export default function Hero() {
   const { selectedCategory, selectedPublisher, searchKeyword } = useAppSelector(

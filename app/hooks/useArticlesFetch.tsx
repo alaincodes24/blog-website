@@ -1,3 +1,4 @@
+'use client'
 import { useFetchArticlesQuery } from "../features/api/apiSlice";
 import { useAppSelector } from "./redux";
 

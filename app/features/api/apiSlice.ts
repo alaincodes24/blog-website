@@ -21,9 +21,10 @@ interface PublishersApiResponse {
   sources: Publisher[];
 }
 
-const { VITE_API_BASE_URL, VITE_API_KEY } = import.meta.env;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
-const withApiKey = (query: string) => `${query}&apiKey=${VITE_API_KEY}`;
+const withApiKey = (query: string) => `${query}&apiKey=${API_KEY}`;
 
 const normalizeArticles = (articles: ArticleDto[]): Article[] =>
   articles.map((article) => ({
@@ -34,7 +35,7 @@ const normalizeArticles = (articles: ArticleDto[]): Article[] =>
   }));
 
 const apiSlice = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: VITE_API_BASE_URL }),
+  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   endpoints: (builder) => ({
     fetchArticles: builder.query<Article[], QueryArgs>({
       query: (args) => {
