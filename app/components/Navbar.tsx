@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FC, useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { GrClose } from "react-icons/gr";
@@ -14,7 +14,7 @@ import SearchInput from "./SearchInput";
 
 const Navbar: FC = () => {
   const router = useRouter();
-  const pathname = window.location.pathname;
+  const pathname = usePathname();
   const navigate = (url: string) => {
     router.push(url);
   };
