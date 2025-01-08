@@ -1,7 +1,7 @@
 import { ChangeEvent, FC, KeyboardEvent, useEffect, useState } from "react";
 import { CgSearch } from "react-icons/cg";
-import { useAppDispatch, useAppSelector } from "../hooks/redux";
 import { setSearchKeyword } from "../features/articles/articlesSlice";
+import { useAppDispatch, useAppSelector } from "../hooks/redux";
 
 const SearchInput: FC = () => {
   const dispatch = useAppDispatch();

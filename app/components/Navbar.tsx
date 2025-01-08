@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { FC, useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { GrClose } from "react-icons/gr";
@@ -9,11 +9,12 @@ import { setCategoryClasses } from "../constants/styles";
 import { setCategory } from "../features/articles/articlesSlice";
 import { useAppDispatch, useAppSelector } from "../hooks/redux";
 import CenterContent from "./CenterContent";
+import MobileNav from "./MobileNav";
 import SearchInput from "./SearchInput";
 
 const Navbar: FC = () => {
   const router = useRouter();
-  const pathname = router.pathname;
+  // const pathname = window.location.pathname;
   const navigate = (url: string) => {
     router.push(url);
   };
@@ -23,7 +24,7 @@ const Navbar: FC = () => {
 
   const selectCategory = (category: string) => {
     dispatch(setCategory(category));
-    if (pathname !== "/") navigate("/");
+    // if (pathname !== "/") navigate("/");
   };
 
   const toggleNav = () => setIsNavOpen(!isNavOpen);
@@ -45,7 +46,7 @@ const Navbar: FC = () => {
           </div>
         </div>
 
-        {/* {isNavOpen && <MobileNav selectCategory={selectCategory} toggleNav={toggleNav} />} */}
+        {isNavOpen && <MobileNav selectCategory={selectCategory} toggleNav={toggleNav} />}
 
         <div className="justify-center hidden gap-8 mt-4 font-semibold md:flex">
           {categories.map((category, index) => (

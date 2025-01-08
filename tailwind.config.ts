@@ -9,8 +9,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        light: "#f6f4f0",
+        primary: "#8C6232",
+      },
+      fontFamily: {
+        newsreader: ["Newsreader", "serif"],
       },
     },
   },
